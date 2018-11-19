@@ -1,0 +1,47 @@
+<div class="container">
+    <div id="signup">
+       <div class="signup-screen">
+          <div class="space-bot text-center">
+             <h1>Sign up</h1>
+             <div class="divider"></div>
+          </div>
+          <form class="form-register" method="post" name="register" novalidate>
+             <div class="input-field col s6">
+                <label for="first-name">First Name</label>
+                <input id="first-name" type="text" ng-model="user.first_name" class="validate" required>
+                
+             </div>
+             <div class="input-field col s6">
+                <label for="last-name">Last Name</label>
+                <input id="last-name" type="text" ng-model="user.last_name" class="validate" required>
+             </div>
+             <div class="input-field col s6">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" ng-model="user.email_id" class="validate" required>
+             </div>
+             <p class="alert alert-danger" ng-show="form-register.email.$dirty && form-register.email.$error.email">Your email is invalid.</p>
+             <div class="input-field col s6">
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" ng-model="user.password" ng-minlength='6' class="validate" required>
+             </div>
+             <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+             <div class="input-field col s6">
+                    <label for="repassword">Confirm Password</label>
+                    <input id="repassword" type="password" name="repassword" ng-model="repassword" ng-minlength='6' class="validate" required>
+            </div>
+            <p class="alert alert-danger" ng-show="form-register.repassword.$dirty && user.password != repassword">Password does not match.</p>
+             <div class="space-top text-center">
+                <button ng-click="userRegister()" ng-disabled="form-register.$invalid" class="btn btn-success pull-left">Register</button>
+                <button ng-click="loadLogin()" class="btn cancel pull-right">Cancel</button>
+                <div class="clearfix"></div>
+             </div>
+             <div class="row">
+                    <div class="space-top text-center">
+                       <div ng-show="showError" class="alert alert-danger">User registeration failed!! {{ errorMessage }}</div>
+                       <div ng-show="showSuccess" class="alert alert-success">User registered Successfully!!</div>
+                    </div>
+                 </div>
+          </form>
+       </div>
+    </div>
+ </div>

@@ -1,0 +1,17 @@
+{
+  "name": "simple_mean_project",
+  "version": "1.0.0",
+  "description": "A simple MEAN application ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gopinath Pandian",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.5"
+  }
+}
